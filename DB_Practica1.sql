@@ -1,4 +1,4 @@
--- Crear una secuencia para generar valores de idcliente automáticamente
+-- Crear una secuencia para generar valores de idcliente automï¿½ticamente
 CREATE SEQUENCE seq_clientes
   START WITH 1
   INCREMENT BY 1
@@ -97,10 +97,10 @@ DELETE FROM Casos;
 COMMIT;
 
 --consulta #8
-SELECT YEAR(fecha_crea) año, MONTH(fecha_crea) mes, COUNT(*) total_casos
+SELECT YEAR(fecha_crea) aï¿½o, MONTH(fecha_crea) mes, COUNT(*) total_casos
 FROM Casos
 GROUP BY YEAR(fecha_crea), MONTH(fecha_crea)
-ORDER BY año, mes;
+ORDER BY aï¿½o, mes;
 
 --consulta #9
 SELECT C.*, P.nombres nombre_pesona_crea 
@@ -128,8 +128,8 @@ CREATE TABLE Empleados (
 
 INSERT INTO Empleados (ID, Nombre, Apellido, Salario, Departamento)
 VALUES
-    (2, 'María', 'Gomez', 55000, 'Ventas'),
-    (3, 'Luis', 'Rodriguez', 70000, 'Tecnología'),
+    (2, 'Marï¿½a', 'Gomez', 55000, 'Ventas'),
+    (3, 'Luis', 'Rodriguez', 70000, 'Tecnologï¿½a'),
     (4, 'Ana', 'Martinez', 48000, 'Recursos Humanos');
 
 CREATE TABLE Clientes (
@@ -249,10 +249,10 @@ DELETE FROM TMP_JSON_TABLE;
 
 
 INSERT INTO  TMP_JSON_TABLE(IDCLIENTE, JSONDATA) VALUES (1, '{
-  "nombre": "Juan Pérez",
+  "nombre": "Juan Pï¿½rez",
   "edad": 30,
   "puesto": "Desarrollador de Software",
-  "departamento": "Tecnología de la Información",
+  "departamento": "Tecnologï¿½a de la Informaciï¿½n",
   "salario": 60000.00,
   "fecha_contratacion": "2021-01-15"
 }');
@@ -284,10 +284,10 @@ from TMP_JSON_TABLE where idcliente = 2;
 INSERT INTO TMP_JSON_TABLE (IDCLIENTE, JSONDATA) VALUES (
     3,
     '{
-  "nombre": "Juan Pérez",
+  "nombre": "Juan Pï¿½rez",
   "edad": 30,
   "puesto": "Desarrollador de Software",
-  "departamento": "Tecnología de la Información",
+  "departamento": "Tecnologï¿½a de la Informaciï¿½n",
   "salario": 60000.00,
   "fecha_contratacion": "2021-01-15",
   "direccion": {
@@ -329,4 +329,11 @@ select
 json_value(jsonData, '$.contacto.telefono') telefono,
 json_value(jsonData, '$.contacto.email') email
 from TMP_JSON_TABLE where idcliente = 3;
+
+-------
+--clase 22102023
+------
+/*
+uso de variables en pl/sql 
+*/
 
